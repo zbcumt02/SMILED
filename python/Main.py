@@ -24,8 +24,8 @@ warnings.simplefilter("ignore", category=RuntimeWarning)
 
 parser = argparse.ArgumentParser(description='Link Prediction')
 # general settings
-parser.add_argument('--data-name', default='Slashdot', help='dataset name')
-parser.add_argument('--data-ratio', default='100in1k',
+parser.add_argument('--data-name', default='yeast', help='dataset name')
+parser.add_argument('--data-ratio', default='1in1k',
                     help='dataset similarity ratio such as 1in1k, 10in1k, 100in1k')
 parser.add_argument('--max-train-num', type=int, default=10000,
                     help='set maximum number of train links (to fit into memory)')
@@ -47,7 +47,7 @@ parser.add_argument('--early-stop-patience', type=int, default=15, help='early s
 # Image: epoch 200 patience 30 \enron Slashdot: epoch 200 patience 50 \others: epoch 100 patience 15
 # noisy label
 parser.add_argument('--noisy-label', action='store_true', default=True, help='noise')
-parser.add_argument('--noise-ratio', type=float, default=0.0, help='noise ratio')
+parser.add_argument('--noise-ratio', type=float, default=0.4, help='noise ratio')
 parser.add_argument('--use-denoising', action='store_true', default=True,
                     help='use denoising')
 parser.add_argument('--denoising-method', type=str, default='isolation_forest',
